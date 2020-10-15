@@ -16,7 +16,6 @@ timeOpen = 0.7 # time to open relay for
 timeOpen = input('Set timeOpen (seconds): ')
 firingInput = input('Fire cannon? [Y]es [N]o: ')
 
-
 # activate relay for 
 while True:
     
