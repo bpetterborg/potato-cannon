@@ -1,11 +1,14 @@
 # controls a potato cannon with a Raspbery Pi
 
-# set buttonTimeOpen to correct value if running in trigger mode
+# make sure to set buttonTimeOpen to correct value if running in trigger mode, default is 0.7
 # this isn't needed in remote mode
 
 # importing stuff
 import gpiozero # rpi gpio control
 from time import sleep
+
+# most important part
+print('Electronic Controlled Firing System \n')
 
 # variables
 relay = LED(17) # set to correct pin
