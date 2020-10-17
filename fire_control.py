@@ -11,9 +11,9 @@ from time import sleep
 print('Electronic Controlled Firing System \n')
 
 # variables
-relay = LED(17) # set to correct pin
-button = Button(2) # set to correct pin
-operationModeSelect = Button(3) # set to correct pin. 3 is not the correct pin
+relay = LED(26) # set to correct pin
+button = Button(3) # set to correct pin
+operationModeSelect = Button(4) # set to correct pin. 3 is not the correct pin
 buttonTimeOpen = 0.7
 cooldown = input('set cooldown time for remote mode: ')
 
