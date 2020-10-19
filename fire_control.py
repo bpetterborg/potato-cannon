@@ -4,14 +4,14 @@
 # this isn't needed in remote mode
 
 # importing stuff
-import gpiozero # rpi gpio control
+from gpiozero import LED, Button # rpi gpio control
 from time import sleep
 
 # most important part
 print('Electronic Controlled Firing System \n')
 
 # variables
-relay = LED(26) # set to correct pin
+led = LED(26) # set to correct pin
 button = Button(3) # set to correct pin
 operationModeSelect = Button(4) # set to correct pin. 3 is not the correct pin
 buttonTimeOpen = 0.7
@@ -26,15 +26,15 @@ while operationModeSelect.when_pressed:
         print("buttonTimeOpen = " + buttonTimeOpen)
         print("firing... \n")
        
-        relay.on()
+        led.on()
         print('firing for ' + buttonTimeOpen + 's')
         sleep(float(buttonTimeOpen))
-        relay.off()
+        led.off()
 
         print('cannon fired \n')
 
     else:
-        relay.off()
+        led.off()
 
 # fire cannon in remote mode
 while True: 
@@ -51,10 +51,10 @@ while True:
         print('timeopen set to ' + timeOpen + '\n')
         print('firing... ')
 
-        relay.on()
+        led.on()
         print('firing for ' + timeOpen + 's')
         sleep(float(timeOpen))
-        relay.off()
+        led.off()
 
         print('Cannon fired.')
         print('sleeping for ' + cooldown + 's')
@@ -62,6 +62,6 @@ while True:
         print('It is now safe to reload the cannon \n')
    
     else:
-        relay.off()
+        led.off()
         print('not firing; firingInput set to False \n')
 
