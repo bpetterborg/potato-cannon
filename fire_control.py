@@ -11,7 +11,7 @@ from time import sleep
 print('Electronic Controlled Firing System \n')
 
 # variables
-led = LED(26) # set to correct pin
+relay = LED(26) # set to correct pin
 button = Button(3) # set to correct pin
 operationModeSelect = Button(4) # set to correct pin. 3 is not the correct pin
 buttonTimeOpen = 0.7
@@ -26,15 +26,15 @@ while operationModeSelect.when_pressed:
         print("buttonTimeOpen = " + buttonTimeOpen)
         print("firing... \n")
        
-        led.on()
+        relay.on()
         print('firing for ' + buttonTimeOpen + 's')
         sleep(float(buttonTimeOpen))
-        led.off()
+        relay.off()
 
         print('cannon fired \n')
 
     else:
-        led.off()
+        relay.off()
 
 # fire cannon in remote mode
 while True: 
@@ -51,10 +51,10 @@ while True:
         print('timeopen set to ' + timeOpen + '\n')
         print('firing... ')
 
-        led.on()
+        relay.on()
         print('firing for ' + timeOpen + 's')
         sleep(float(timeOpen))
-        led.off()
+        relay.off()
 
         print('Cannon fired.')
         print('sleeping for ' + cooldown + 's')
@@ -62,6 +62,6 @@ while True:
         print('It is now safe to reload the cannon \n')
    
     else:
-        led.off()
+        relay.off()
         print('not firing; firingInput set to False \n')
 
