@@ -4,7 +4,7 @@
 # this isn't needed in remote mode
 
 # importing stuff
-from gpiozero import LED, Button # rpi gpio control
+from gpiozero import LED, Button # if this throws an error, make sure gpiozero is installed
 from time import sleep
 
 # most important part
